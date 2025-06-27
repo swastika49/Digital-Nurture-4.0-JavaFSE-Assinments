@@ -70,8 +70,8 @@ BEGIN
   DBMS_OUTPUT.PUT_LINE('--- Updated Loan Interest Rates ---');
   FOR rec IN (
     SELECT l.LoanID, c.Name, l.InterestRate
-    FROM Loans l
-    JOIN Customers c ON l.CustomerID = c.CustomerID
+    FROM Loan l
+    JOIN Customer c ON l.CustomerID = c.CustomerID
   ) LOOP
     DBMS_OUTPUT.PUT_LINE('Loan ID: ' || rec.LoanID || 
                          ', Customer: ' || rec.Name || 
