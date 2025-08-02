@@ -1,44 +1,46 @@
 import React from "react";
 
-const ListofPlayers = () => {
-  const players = [
-    { name: "Virat", score: 85 },
-    { name: "Rohit", score: 40 },
-    { name: "Rahul", score: 75 },
-    { name: "Shreyas", score: 65 },
-    { name: "Gill", score: 90 },
-    { name: "Hardik", score: 60 },
-    { name: "Jadeja", score: 72 },
-    { name: "Pant", score: 68 },
-    { name: "Bumrah", score: 35 },
-    { name: "Shami", score: 55 },
-    { name: "Siraj", score: 80 },
-  ];
+const IndianPlayers = () => {
+  const OddTeam = ["Virat", "Rahul", "Gill", "Jadeja", "Bumrah"];
+  const EvenTeam = ["Rohit", "Shreyas", "Hardik", "Pant", "Shami", "Siraj"];
 
-  // Filter players with scores below 70 using ES6 arrow function
-  const filteredPlayers = players.filter((player) => player.score < 70);
+  // Destructuring array elements
+  const [odd1, odd2, ...restOdd] = OddTeam;
+  const [even1, even2, ...restEven] = EvenTeam;
+
+  // Merge two arrays using ES6 spread
+  const T20players = ["Kohli", "Surya", "Ishan"];
+  const RanjiPlayers = ["Shubman", "Pujara", "Rahane"];
+  const MergedPlayers = [...T20players, ...RanjiPlayers];
 
   return (
     <div>
-      <h2>All Players (Using map)</h2>
+      <h2>Odd Team Players (Destructured)</h2>
       <ul>
-        {players.map((player, index) => (
-          <li key={index}>
-            {player.name} - {player.score}
-          </li>
+        <li>{odd1}</li>
+        <li>{odd2}</li>
+        {restOdd.map((p, i) => (
+          <li key={i}>{p}</li>
         ))}
       </ul>
 
-      <h2>Filtered Players (Score below 70)</h2>
+      <h2>Even Team Players (Destructured)</h2>
       <ul>
-        {filteredPlayers.map((player, index) => (
-          <li key={index}>
-            {player.name} - {player.score}
-          </li>
+        <li>{even1}</li>
+        <li>{even2}</li>
+        {restEven.map((p, i) => (
+          <li key={i}>{p}</li>
+        ))}
+      </ul>
+
+      <h2>Merged Players (T20 + Ranji)</h2>
+      <ul>
+        {MergedPlayers.map((player, index) => (
+          <li key={index}>{player}</li>
         ))}
       </ul>
     </div>
   );
 };
 
-export default ListofPlayers;
+export default IndianPlayers;
