@@ -1,26 +1,3 @@
-
-# Git Ignore Hands-On Lab 
-
-This lab demonstrates how to use `.gitignore` to exclude unwanted files and folders from being tracked in a Git repository.
-
----
-
-## Objectives
-
-- Learn how to create and use `.gitignore` files
-- Ignore specific file types and folders (e.g., `.log`, `log/`)
-
----
-
-## Prerequisites
-
-- Git is installed and configured (`git config` done)
-- Notepad++ is set as the default Git editor (optional)
-- A local Git repository (`git init` already run)
-- A remote Git repository (GitHub or GitLab)
-
----
-
 ## Steps to Ignore Files
 
 ### Step 1: Create Unwanted Files
